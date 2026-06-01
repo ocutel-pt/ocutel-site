@@ -97,7 +97,7 @@
   /* ---------- header ---------- */
   header.site{
     border-top:none;
-    padding:30px 0;
+    padding:34px 0 30px;
     position:relative;
     z-index:3;
   }
@@ -114,10 +114,12 @@
     line-height:0;
   }
   .mark img{
-    height:46px;
+    height:clamp(64px,7.5vw,84px);
     width:auto;
     display:block;
+    transition:opacity .25s ease;
   }
+  .mark:hover img{opacity:.82;}
   .mark .visually-hidden{
     position:absolute;
     width:1px;height:1px;
@@ -191,10 +193,11 @@
   }
   .hero-sub{
     font-family:var(--serif);
-    font-size:clamp(19px,2.6vw,24px);
-    line-height:1.55;
-    color:var(--ink-soft);
-    max-width:30ch;
+    font-size:clamp(20px,2.8vw,26px);
+    line-height:1.5;
+    color:var(--ink);
+    letter-spacing:.01em;
+    max-width:34ch;
     margin:0 auto 30px;
   }
   .hero-note{
@@ -388,6 +391,8 @@
     .wrap{padding:0 24px;}
     section{padding:74px 0;}
     .nav-links{display:none;}
+    .nav{justify-content:center;}
+    .mark img{height:72px;}
     .grid-2{grid-template-columns:1fr;gap:36px;}
     .process-grid{
       grid-template-columns:1fr 1fr;
@@ -439,8 +444,8 @@
       <p class="eyebrow reveal d1">Oficina de Cutelaria Lusitana</p>
       <h1 class="reveal d2">OCUTEL<sup>®</sup></h1>
       <div class="forge-line reveal d3"></div>
-      <p class="hero-sub reveal d3">Cutelaria tradicional de autor, feita com tempo, intenção e respeito pela matéria.</p>
-      <p class="hero-note reveal d4">Peças nascidas do fogo, da mão e da procura constante de aperfeiçoamento. Uma oficina portuguesa, não uma linha industrial.</p>
+      <p class="hero-sub reveal d3">Cutelaria tradicional de autor.</p>
+      <p class="hero-note reveal d4">Peças feitas devagar, uma de cada vez, a partir da matéria, do desenho e da mão. Uma oficina portuguesa, não uma linha industrial.</p>
     </div>
   </section>
 
@@ -453,9 +458,9 @@
           <p class="aside-mark">Aço, madeira, couro,<br>fogo e ferramentas.<br>O tempo certo de cada gesto.</p>
         </div>
         <div>
-          <p class="lead">A OCUTEL® nasce de uma oficina pessoal, onde a matéria se trabalha à mão e cada peça é levada do início ao fim com método.</p>
-          <p>Não há atalhos. A lâmina, como quem a faz, forma-se por pressão, calor, paciência e correção. Trabalha-se o aço, mas trabalha-se também a forma de estar diante dele: estar presente, respeitar o tempo da matéria e aceitar que a beleza não nasce da pressa.</p>
-          <p>É uma cutelaria de autor — sóbria, atenta ao detalhe, sem promessa fácil. Aquilo que se faz procura estar alinhado com aquilo em que se acredita.</p>
+          <p class="lead">A OCUTEL® não nasce de uma linha de produção. Nasce de uma bancada, de ferramentas e de um trabalho feito uma peça de cada vez.</p>
+          <p>Há tentativa, desbaste, erro e correção. A lâmina, como quem a faz, forma-se por pressão, calor e paciência. Trabalha-se o aço, mas trabalha-se também a forma de estar diante dele: respeitar o tempo da matéria e aceitar que a beleza não nasce da pressa.</p>
+          <p>É uma cutelaria de autor — sóbria, atenta ao detalhe, sem promessa fácil. Um espaço de aprendizagem contínua, onde aquilo que se faz procura estar alinhado com aquilo em que se acredita.</p>
         </div>
       </div>
     </div>
@@ -466,7 +471,7 @@
     <div class="wrap">
       <p class="eyebrow">O processo</p>
       <h2 class="section-title">Da matéria bruta à forma.</h2>
-      <p class="lead" style="max-width:58ch;">Cada peça atravessa um caminho. Nada nasce acabado; tudo precisa de trabalho, repetição e tempo.</p>
+      <p class="lead" style="max-width:60ch;">Cada peça começa na matéria bruta e avança por etapas lentas, até encontrar equilíbrio entre utilidade, desenho e presença. Nada nasce acabado.</p>
 
       <div class="process-grid">
         <div class="step">
@@ -509,7 +514,7 @@
         <div>
           <p class="lead">Peças únicas ou de pequena série, feitas à mão, uma de cada vez.</p>
           <p>Não existe catálogo nem carrinho de compras. Cada peça pertence a um caminho maior do que a simples produção de um objeto, e muitas vezes ganha sentido quando encontra destino noutra pessoa.</p>
-          <p>A primeira navalha de desenho próprio está em estudo. Aqui fica o seu traçado — antes do aço, vem o desenho.</p>
+          <p>Algumas peças serão apresentadas à medida que estiverem prontas, incluindo a linha em desenvolvimento OCUTEL cnvt. A primeira navalha de desenho próprio está em estudo — antes do aço, vem o desenho.</p>
         </div>
       </div>
 
@@ -537,12 +542,9 @@
     <div class="wrap">
       <p class="eyebrow">Contacto</p>
       <h2 class="section-title">Falar sobre uma peça ou sobre o trabalho.</h2>
+      <p class="lead" style="max-width:52ch;">Pedidos e conversa por email ou Instagram. Sem pressa, à medida da oficina.</p>
 
       <div class="contact-rows">
-        <a class="crow" href="mailto:geral@ocutel.pt">
-          <span class="clabel">Geral</span>
-          <span class="cval">geral@ocutel.pt</span>
-        </a>
         <a class="crow" href="mailto:goncalo.heleno@ocutel.pt">
           <span class="clabel">Autor</span>
           <span class="cval">goncalo.heleno@ocutel.pt</span>
