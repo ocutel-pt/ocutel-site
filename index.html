@@ -1,144 +1,570 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OCUTEL — Oficina de Cutelaria Lusitana</title>
-  <meta name="description" content="OCUTEL — Oficina de Cutelaria Lusitana. Cutelaria artesanal portuguesa, feita com tempo, precisão e intenção.">
-  <style>
-    :root {
-      --background: #f7f3ec;
-      --text: #1f1f1f;
-      --muted: #6f6a60;
-      --accent: #8a5a2b;
-      --line: #d8cfc0;
-      --card: #fffaf2;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCUTEL® — Oficina de Cutelaria Lusitana</title>
+<meta name="description" content="OCUTEL® — Oficina de Cutelaria Lusitana. Cutelaria tradicional de autor, feita com tempo, intenção e respeito pela matéria.">
+<style>
+  :root{
+    /* base escura afinada ao petróleo do logótipo */
+    --bg:#0f1518;
+    --bg-2:#131b1f;
+    --bg-3:#172227;
+    --ink:#e8e4dc;
+    --ink-soft:#a9b1b2;
+    --ink-faint:#6f797b;
+    --line:#26343a;
+    --line-soft:#1e2a2f;
+    /* cores reais da marca (extraídas do logótipo) */
+    --red:#e03020;        /* vermelho-telha do galo — acento principal */
+    --red-soft:#e86a55;
+    --amber:#f0a020;      /* açafrão — acento quente secundário */
+    --petrol:#007090;     /* azul-petróleo — acento frio */
+    --petrol-soft:#3e98ad;
+    --maxw:1080px;
+    --serif:Georgia,"Times New Roman",Times,serif;
+    --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background-color:var(--bg);
+    background-image:
+      radial-gradient(120% 80% at 50% -10%, #17242a 0%, var(--bg) 55%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.72;
+    letter-spacing:.01em;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    width:100%;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- shared section heads ---------- */
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--petrol-soft);
+    margin:0 0 22px;
+    font-weight:600;
+  }
+
+  .section-title{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:30px;
+    line-height:1.2;
+    margin:0 0 28px;
+    color:var(--ink);
+    letter-spacing:.005em;
+  }
+
+  .lead{
+    font-family:var(--serif);
+    font-size:21px;
+    line-height:1.65;
+    color:var(--ink-soft);
+    font-weight:400;
+    margin:0 0 18px;
+  }
+
+  p{margin:0 0 18px;color:var(--ink-soft);}
+  p:last-child{margin-bottom:0;}
+
+  section{
+    padding:104px 0;
+    border-top:1px solid var(--line-soft);
+    position:relative;
+  }
+
+  /* ---------- header ---------- */
+  header.site{
+    border-top:none;
+    padding:30px 0;
+    position:relative;
+    z-index:3;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+  }
+  .mark{
+    display:inline-flex;
+    align-items:center;
+    text-decoration:none;
+    line-height:0;
+  }
+  .mark img{
+    height:46px;
+    width:auto;
+    display:block;
+  }
+  .mark .visually-hidden{
+    position:absolute;
+    width:1px;height:1px;
+    padding:0;margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;border:0;
+  }
+  .nav-links{
+    display:flex;
+    gap:30px;
+    font-size:12.5px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+  .nav-links a{
+    color:var(--ink-faint);
+    text-decoration:none;
+    transition:color .25s ease;
+  }
+  .nav-links a:hover{color:var(--petrol-soft);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    border-top:none;
+    padding:96px 0 120px;
+    text-align:center;
+    overflow:hidden;
+  }
+  .hero .eyebrow{
+    color:var(--petrol-soft);
+    margin-bottom:34px;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(58px,12vw,128px);
+    line-height:.96;
+    margin:0;
+    letter-spacing:.04em;
+    color:var(--ink);
+  }
+  .hero h1 sup{
+    font-size:.22em;
+    letter-spacing:0;
+    top:-2.1em;
+    color:var(--ink-faint);
+    margin-left:.05em;
+  }
+  /* forged divider — pure CSS, evokes a blade / line of fire */
+  .forge-line{
+    width:min(440px,72%);
+    margin:46px auto 40px;
+    height:1px;
+    background:linear-gradient(90deg,
+      transparent 0%,
+      var(--line) 12%,
+      var(--red) 50%,
+      var(--line) 88%,
+      transparent 100%);
+    position:relative;
+  }
+  .forge-line::after{
+    content:"";
+    position:absolute;
+    top:50%;left:50%;
+    width:7px;height:7px;
+    transform:translate(-50%,-50%) rotate(45deg);
+    background:var(--red);
+    box-shadow:0 0 18px 2px rgba(224,48,32,.45);
+  }
+  .hero-sub{
+    font-family:var(--serif);
+    font-size:clamp(19px,2.6vw,24px);
+    line-height:1.55;
+    color:var(--ink-soft);
+    max-width:30ch;
+    margin:0 auto 30px;
+  }
+  .hero-note{
+    font-size:14.5px;
+    color:var(--ink-faint);
+    letter-spacing:.04em;
+    max-width:46ch;
+    margin:0 auto;
+  }
+
+  /* ---------- oficina (two columns) ---------- */
+  .grid-2{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:64px;
+    align-items:start;
+  }
+  .col-aside .eyebrow{margin-bottom:0;}
+  .col-aside .aside-mark{
+    margin-top:26px;
+    font-family:var(--serif);
+    font-size:15px;
+    font-style:italic;
+    color:var(--ink-faint);
+    line-height:1.6;
+  }
+
+  /* ---------- processo ---------- */
+  .process-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:0;
+    margin-top:50px;
+    border-top:1px solid var(--line);
+  }
+  .step{
+    padding:34px 26px 36px 0;
+    border-right:1px solid var(--line-soft);
+    position:relative;
+  }
+  .step:last-child{border-right:none;padding-right:0;}
+  .step-num{
+    font-family:var(--serif);
+    font-size:13px;
+    color:var(--petrol-soft);
+    letter-spacing:.1em;
+    display:block;
+    margin-bottom:18px;
+  }
+  .step h3{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:22px;
+    margin:0 0 12px;
+    color:var(--ink);
+    letter-spacing:.01em;
+  }
+  .step p{
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--ink-faint);
+    margin:0;
+  }
+
+  /* ---------- peças ---------- */
+  .pecas{background-color:var(--bg-2);}
+  .pecas .grid-2{gap:64px;}
+
+  /* prancha da navalha — imagem real, funde no fundo */
+  .blade-plate{
+    margin:64px 0 0;
+    padding:0;
+    position:relative;
+  }
+  .blade-plate img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .blade-plate figcaption{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-top:18px;
+    padding-top:24px;
+    border-top:1px solid var(--line-soft);
+    text-align:center;
+  }
+  .bp-line{
+    font-family:var(--serif);
+    font-size:16px;
+    letter-spacing:.04em;
+    color:var(--ink-soft);
+  }
+  .bp-line strong{
+    color:var(--ink);
+    font-weight:600;
+    letter-spacing:.1em;
+  }
+  .bp-sub{
+    font-size:13px;
+    letter-spacing:.05em;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- autor ---------- */
+  .autor{text-align:center;}
+  .autor .wrap{max-width:720px;}
+  .autor .lead{
+    font-size:23px;
+    color:var(--ink-soft);
+  }
+  .autor p{color:var(--ink-faint);font-size:16px;}
+
+  /* ---------- contacto ---------- */
+  .contacto{background-color:var(--bg-2);}
+  .contact-rows{
+    margin-top:44px;
+    border-top:1px solid var(--line);
+  }
+  .crow{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:24px;
+    padding:24px 0;
+    border-bottom:1px solid var(--line-soft);
+    text-decoration:none;
+    transition:padding-left .3s ease;
+  }
+  .crow:hover{padding-left:10px;}
+  .crow .clabel{
+    font-size:12px;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    flex:0 0 auto;
+  }
+  .crow .cval{
+    font-family:var(--serif);
+    font-size:clamp(19px,3vw,26px);
+    color:var(--ink);
+    text-align:right;
+    transition:color .25s ease;
+    word-break:break-word;
+  }
+  .crow:hover .cval{color:var(--petrol-soft);}
+
+  /* ---------- footer ---------- */
+  footer.site{
+    padding:46px 0 60px;
+    border-top:1px solid var(--line-soft);
+  }
+  .foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .foot p{
+    font-size:13px;
+    letter-spacing:.05em;
+    color:var(--ink-faint);
+    margin:0;
+  }
+  .foot .foot-mark{
+    font-family:var(--serif);
+    letter-spacing:.16em;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- entrance animation ---------- */
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{
+      opacity:0;
+      transform:translateY(16px);
+      animation:rise 1s cubic-bezier(.22,.61,.36,1) forwards;
     }
+    .d1{animation-delay:.05s;}
+    .d2{animation-delay:.22s;}
+    .d3{animation-delay:.40s;}
+    .d4{animation-delay:.58s;}
+    .d5{animation-delay:.74s;}
+    @keyframes rise{to{opacity:1;transform:translateY(0);}}
+  }
 
-```
-* {
-  box-sizing: border-box;
-}
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    body{font-size:16px;}
+    .wrap{padding:0 24px;}
+    section{padding:74px 0;}
+    .nav-links{display:none;}
+    .grid-2{grid-template-columns:1fr;gap:36px;}
+    .process-grid{
+      grid-template-columns:1fr 1fr;
+      border-top:none;
+    }
+    .step{
+      border-right:1px solid var(--line-soft);
+      border-bottom:1px solid var(--line-soft);
+      padding:26px 22px 28px 0;
+    }
+    .step:nth-child(2n){border-right:none;}
+    .step:last-child{border-bottom:none;}
+    .crow{flex-direction:column;align-items:flex-start;gap:8px;}
+    .crow .cval{text-align:left;}
+    .hero{padding:64px 0 84px;}
+  }
 
-body {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  background: var(--background);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-main {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 24px;
-}
-
-.card {
-  max-width: 760px;
-  width: 100%;
-  background: var(--card);
-  border: 1px solid var(--line);
-  padding: 56px 40px;
-  text-align: center;
-}
-
-.eyebrow {
-  margin: 0 0 16px;
-  color: var(--accent);
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-h1 {
-  margin: 0;
-  font-size: clamp(3rem, 9vw, 6rem);
-  letter-spacing: 0.12em;
-  font-weight: 400;
-}
-
-.subtitle {
-  margin: 8px 0 32px;
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
-  color: var(--muted);
-}
-
-.divider {
-  width: 88px;
-  height: 1px;
-  margin: 32px auto;
-  background: var(--accent);
-}
-
-.statement {
-  max-width: 560px;
-  margin: 0 auto 32px;
-  font-size: 1.1rem;
-}
-
-.contacts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 32px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.95rem;
-}
-
-a {
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid var(--accent);
-}
-
-a:hover {
-  color: var(--accent);
-}
-
-footer {
-  margin-top: 40px;
-  color: var(--muted);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-}
-```
-
-  </style>
+  @media (max-width:480px){
+    .process-grid{grid-template-columns:1fr;}
+    .step,.step:nth-child(2n){border-right:none;}
+    .foot{flex-direction:column;align-items:flex-start;}
+  }
+</style>
 </head>
 <body>
-  <main>
-    <section class="card" aria-label="OCUTEL">
-      <p class="eyebrow">Oficina de Cutelaria Lusitana</p>
-      <h1>OCUTEL</h1>
-      <p class="subtitle">Cutelaria artesanal portuguesa</p>
 
-```
-  <div class="divider"></div>
-
-  <p class="statement">
-    Peças feitas com tempo, precisão e intenção. Uma oficina de autor dedicada
-    à criação de cutelaria artesanal, entre tradição, desenho e trabalho manual.
-  </p>
-
-  <div class="contacts">
-    <a href="mailto:geral@ocutel.pt">geral@ocutel.pt</a>
-    <span>·</span>
-    <a href="mailto:goncalo.heleno@ocutel.pt">goncalo.heleno@ocutel.pt</a>
-    <span>·</span>
-    <a href="https://www.instagram.com/ocutel.pt/" target="_blank" rel="noopener">Instagram</a>
+<header class="site">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="mark" href="#topo" aria-label="OCUTEL — Oficina de Cutelaria Lusitana">
+        <img src="logo-ocutel.png" alt="OCUTEL®" width="82" height="100">
+        <span class="visually-hidden">OCUTEL®</span>
+      </a>
+      <div class="nav-links">
+        <a href="#oficina">A oficina</a>
+        <a href="#processo">O processo</a>
+        <a href="#pecas">Peças</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
   </div>
+</header>
 
-  <footer>
-    © 2026 OCUTEL — Oficina de Cutelaria Lusitana
-  </footer>
-</section>
-```
+<main id="topo">
 
-  </main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal d1">Oficina de Cutelaria Lusitana</p>
+      <h1 class="reveal d2">OCUTEL<sup>®</sup></h1>
+      <div class="forge-line reveal d3"></div>
+      <p class="hero-sub reveal d3">Cutelaria tradicional de autor, feita com tempo, intenção e respeito pela matéria.</p>
+      <p class="hero-note reveal d4">Peças nascidas do fogo, da mão e da procura constante de aperfeiçoamento. Uma oficina portuguesa, não uma linha industrial.</p>
+    </div>
+  </section>
+
+  <!-- A OFICINA -->
+  <section id="oficina">
+    <div class="wrap">
+      <div class="grid-2">
+        <div class="col-aside">
+          <p class="eyebrow">A oficina</p>
+          <p class="aside-mark">Aço, madeira, couro,<br>fogo e ferramentas.<br>O tempo certo de cada gesto.</p>
+        </div>
+        <div>
+          <p class="lead">A OCUTEL® nasce de uma oficina pessoal, onde a matéria se trabalha à mão e cada peça é levada do início ao fim com método.</p>
+          <p>Não há atalhos. A lâmina, como quem a faz, forma-se por pressão, calor, paciência e correção. Trabalha-se o aço, mas trabalha-se também a forma de estar diante dele: estar presente, respeitar o tempo da matéria e aceitar que a beleza não nasce da pressa.</p>
+          <p>É uma cutelaria de autor — sóbria, atenta ao detalhe, sem promessa fácil. Aquilo que se faz procura estar alinhado com aquilo em que se acredita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O PROCESSO -->
+  <section id="processo">
+    <div class="wrap">
+      <p class="eyebrow">O processo</p>
+      <h2 class="section-title">Da matéria bruta à forma.</h2>
+      <p class="lead" style="max-width:58ch;">Cada peça atravessa um caminho. Nada nasce acabado; tudo precisa de trabalho, repetição e tempo.</p>
+
+      <div class="process-grid">
+        <div class="step">
+          <span class="step-num">I</span>
+          <h3>Matéria</h3>
+          <p>Escolher o aço e a madeira. Compreender o que cada um pode e não pode dar.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">II</span>
+          <h3>Fogo</h3>
+          <p>A forja. Calor e esforço que dão início à forma, ainda longe de estar pronta.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">III</span>
+          <h3>Forma</h3>
+          <p>Desbastar o excesso. Procurar o equilíbrio entre força e delicadeza.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">IV</span>
+          <h3>Fio</h3>
+          <p>Têmpera e afiação. O ponto onde a peça ganha utilidade e verdade.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">V</span>
+          <h3>Tempo</h3>
+          <p>Acabamento e paciência. O silêncio do processo, até a peça ter identidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEÇAS -->
+  <section id="pecas" class="pecas">
+    <div class="wrap">
+      <div class="grid-2">
+        <div class="col-aside">
+          <p class="eyebrow">Peças</p>
+          <p class="aside-mark">Produção artesanal e limitada.<br>Não industrial.<br>Não loja online.</p>
+        </div>
+        <div>
+          <p class="lead">Peças únicas ou de pequena série, feitas à mão, uma de cada vez.</p>
+          <p>Não existe catálogo nem carrinho de compras. Cada peça pertence a um caminho maior do que a simples produção de um objeto, e muitas vezes ganha sentido quando encontra destino noutra pessoa.</p>
+          <p>A primeira navalha de desenho próprio está em estudo. Aqui fica o seu traçado — antes do aço, vem o desenho.</p>
+        </div>
+      </div>
+
+      <figure class="blade-plate">
+        <img src="cnvt-cnvt0.png" alt="Estudo de desenho da navalha OCUTEL cnvt#0 — vista aberta e fechada, com cotas." loading="lazy">
+        <figcaption>
+          <span class="bp-line">Linha <strong>OCUTEL cnvt</strong> — em estudo</span>
+          <span class="bp-sub">Pedidos e conversa por email ou Instagram. Sem pressa, à medida da oficina.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- AUTOR -->
+  <section id="autor" class="autor">
+    <div class="wrap">
+      <p class="eyebrow">O caminho</p>
+      <p class="lead">Não procuro a perfeição. Procuro fazer melhor a cada tentativa.</p>
+      <p>O trabalho manual é, antes de tudo, um espaço de disciplina e de aperfeiçoamento. Obriga a corrigir, a aceitar imperfeições e a respeitar a matéria. Por isso a OCUTEL® é mais do que aço: é também método, intenção e a procura de coerência entre aquilo que se pensa, se diz e se faz.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <div class="wrap">
+      <p class="eyebrow">Contacto</p>
+      <h2 class="section-title">Falar sobre uma peça ou sobre o trabalho.</h2>
+
+      <div class="contact-rows">
+        <a class="crow" href="mailto:geral@ocutel.pt">
+          <span class="clabel">Geral</span>
+          <span class="cval">geral@ocutel.pt</span>
+        </a>
+        <a class="crow" href="mailto:goncalo.heleno@ocutel.pt">
+          <span class="clabel">Autor</span>
+          <span class="cval">goncalo.heleno@ocutel.pt</span>
+        </a>
+        <a class="crow" href="https://www.instagram.com/ocutel.pt/" target="_blank" rel="noopener noreferrer">
+          <span class="clabel">Instagram</span>
+          <span class="cval">@ocutel.pt</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <p class="foot-mark">OCUTEL® — Oficina de Cutelaria Lusitana</p>
+      <p>© 2026 OCUTEL®. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
