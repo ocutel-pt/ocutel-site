@@ -14,7 +14,7 @@ Site público: [ocutel.pt](https://ocutel.pt/).
 
 A identidade visual utiliza a entrega oficial: lettering, galo com rosácea, rosácea e logótipo completo. A navalha cnvt#0 é apresentada numa nova ilustração de conceito, inspirada no desenho anterior e identificada como estudo em desenvolvimento. A prancha pode ser ampliada e descarregada. O histórico Git conserva as imagens anteriores.
 
-Os ornamentos geométricos e a chama são elementos editoriais em SVG, distintos dos ficheiros oficiais da marca.
+As cinco ilustrações ornamentais do processo estão em `assets/illustrations/symbols/`, com o registo dos prompts. São elementos editoriais separados da identidade oficial. Os logótipos e a rosácea usam os originais da agência, sem sobreposições nem alterações de cor ou opacidade.
 
 ## Pré-visualização
 
