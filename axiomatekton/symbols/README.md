@@ -8,7 +8,7 @@ A página usa a nova folha autónoma `../editorial.css`, mantendo os textos, ân
 
 Verificações de 13-10-2026: igualdade do conteúdo textual; destinos internos e recursos locais; IDs únicos; inspeção visual a 1440 e 390 píxeis; ausência de transbordo horizontal e de erros na consola; scanner de segredos e revisão do diff. PNG originais preservados e versões 480px com carregamento diferido. Os seis títulos mantêm texto acessível, e as imagens são decorativas.
 
-Estado: preparado localmente para revisão; sem push ou publicação. A página pública é servida pelo GitHub Pages do repositório `ocutel-pt/ocutel-site`; o projeto Sites legado é separado e não foi publicado por esta revisão.
+Revisão visual aprovada pelo sponsor; publicação autorizada em 13-10-2026 juntamente com os novos botões de acesso. O estado publicado deve ser confirmado pelo deployment do GitHub Pages. A página pública é servida pelo GitHub Pages do repositório `ocutel-pt/ocutel-site`; o projeto Sites legado é separado e não foi publicado por esta revisão.
 
 ## Prompts finais
 

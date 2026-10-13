@@ -16,6 +16,13 @@ A identidade visual utiliza a entrega oficial: lettering, galo com rosácea, ros
 
 As cinco ilustrações ornamentais do processo estão em `assets/illustrations/symbols/`, com o registo dos prompts. São elementos editoriais separados da identidade oficial. Os logótipos e a rosácea usam os originais da agência, sem sobreposições nem alterações de cor ou opacidade.
 
+## Entradas de clientes
+
+- `/axiomatekton/clientes/`: área de clientes dos serviços Axioma Tekton, com indicação explícita de que o registo, inquéritos, pedidos de orçamento e Pocket Cliente estão em preparação.
+- `/dossier/`: entrada visual própria para empresas utilizadoras do software Dossier, fora da secção Axioma Tekton e com assets próprios. Registo e autenticação ainda não estão disponíveis.
+
+As páginas atuais são informativas: não recolhem dados nem simulam contas, pedidos, login ou downloads. A separação por caminho não estabelece um domínio SaaS definitivo nem isolamento de autenticação. A ligação aos percursos operacionais será feita quando existirem destinos validados.
+
 ## Pré-visualização
 
 Na raiz do repositório:
