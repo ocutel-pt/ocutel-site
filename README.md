@@ -5,7 +5,7 @@ Site público: [ocutel.pt](https://ocutel.pt/).
 ## Estrutura
 
 - `index.html`: página principal, em português europeu.
-- `assets/site.css`: estilos adaptáveis, com a paleta oficial e fundos claros.
+- `assets/site.css`: estilos adaptáveis, com a paleta oficial, fundos claros e tons de brasa na secção «O caminho».
 - `assets/site.js`: vistas do estudo da navalha e ampliação acessível.
 - `assets/illustrations/`: novo estudo visual da cnvt#0, versões optimizadas e registo do prompt.
 - `assets/fonts/`: fontes locais Inter e Ocutel Serif (derivada de Lora), com as respetivas licenças OFL. As versões para web incluem os caracteres latinos usados no site.
@@ -13,6 +13,8 @@ Site público: [ocutel.pt](https://ocutel.pt/).
 - `axiomatekton/`: página independente do projeto Axioma Tekton Group.
 
 A identidade visual utiliza a entrega oficial: lettering, galo com rosácea, rosácea e logótipo completo. A navalha cnvt#0 é apresentada numa nova ilustração de conceito, inspirada no desenho anterior e identificada como estudo em desenvolvimento. A prancha pode ser ampliada e descarregada. O histórico Git conserva as imagens anteriores.
+
+Os ornamentos geométricos e a chama são elementos editoriais em SVG, distintos dos ficheiros oficiais da marca.
 
 ## Pré-visualização
 

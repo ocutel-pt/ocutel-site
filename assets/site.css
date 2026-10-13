@@ -71,17 +71,23 @@ section{padding:110px 0;border-top:1px solid var(--line)}
 .study-status::before{content:'';display:inline-block;width:6px;height:6px;background:var(--orange);border-radius:50%;margin-right:8px;vertical-align:middle}
 .transmission{margin-top:70px}
 .transmission h3{font-size:38px;margin-bottom:26px}
-.path{position:relative;overflow:hidden;background:var(--petrol);border-top:0;padding:112px 0 120px}
-.path-inner{position:relative;z-index:1;text-align:center;max-width:1040px}
-.path .eyebrow{color:var(--white)}
-.path h2{color:var(--white);font-size:clamp(36px,4.9vw,62px);line-height:1.25}
-.path h2 em{color:#e4e9df}
-.quiet-line{height:56px;width:1px;background:var(--gold);margin:32px auto}
-.path .lead{font-size:26px;color:var(--white);margin-bottom:30px}
-.path-copy{max-width:62ch;margin:auto}
-.path-copy p{color:#e1ebe7;font-size:16px}
-.path-end{font:italic 29px/1.6 var(--serif);color:var(--gold);margin-top:48px}
-.path-rosette{position:absolute;width:570px;height:570px;object-fit:contain;right:-280px;top:60px;opacity:.075;pointer-events:none}
+.path{position:relative;overflow:hidden;background:radial-gradient(ellipse at 90% 35%,#edc69a 0,transparent 52%),linear-gradient(120deg,#f6eee1,#eed8c2);border-top:1px solid #ddc3aa;padding:100px 0}
+.path-layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(240px,1fr);align-items:center;gap:60px}
+.path-inner{position:relative;z-index:1}
+.path .eyebrow{color:#844127}
+.path h2{color:#573a2d;font-size:clamp(34px,4vw,50px);line-height:1.25}
+.path h2 em{color:#93472d}
+.path .lead{font-size:26px;color:#834027;margin:30px 0}
+.path-copy{max-width:60ch}
+.path-copy p{color:#594538;font-size:16px}
+.path-end{font:italic 29px/1.6 var(--serif);color:#834027;margin-top:36px;padding-top:28px;border-top:1px solid #cfae8e}
+.path-symbol{text-align:center;align-self:center;color:#9a6541}
+.symbol-drawing{position:relative;max-width:360px;margin:auto}
+.symbol-geometry{display:block;width:100%;stroke:currentColor;stroke-width:1;stroke-linejoin:round}
+.symbol-axis{opacity:.24;stroke-dasharray:3 7}
+.symbol-orbit{opacity:.3}
+.path-rosette{position:absolute;width:42%;height:auto;left:29%;top:43%;opacity:.82;pointer-events:none}
+.symbol-caption{font:italic 19px/1.8 var(--serif);color:#834027;margin:12px 0 0}
 .contact{background:var(--paper)}
 .contact-mark{width:148px;margin-top:38px}
 .contact-rows{margin-top:36px;border-top:1px solid var(--line)}
@@ -163,3 +169,14 @@ button:focus-visible{outline:2px solid var(--petrol);outline-offset:6px}
 
 .study-canvas:focus-within{outline:2px solid var(--petrol);outline-offset:5px}
 @media(max-width:760px){.contact-mark{display:block;width:132px;margin-top:24px}.contact>.two-col>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:24px}.contact>.two-col>div:first-child .eyebrow{margin:0}.contact>.two-col>div:first-child .contact-mark{margin:0}}
+
+/* Small typographic marks and workshop geometry. */
+.registered-name{white-space:nowrap}
+.registered{display:inline-block;font-family:var(--sans);font-size:max(.43em,8px);line-height:0;vertical-align:super;position:relative;top:-.12em;margin-left:.08em;letter-spacing:0}
+.forge-line{position:relative;background:linear-gradient(90deg,#a34629,var(--orange),var(--gold))}
+.forge-line span{position:absolute;left:calc(50% - 4px);top:-3px;width:9px;height:9px;background:var(--orange);border:2px solid var(--white);transform:rotate(45deg)}
+.step-sign{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.step-sign .step-num{margin:0}
+.step-sign svg{width:37px;height:37px;stroke:#925136;stroke-width:1.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:1000px){.path-layout{gap:32px;grid-template-columns:minmax(0,1.6fr) minmax(200px,1fr)}}
+@media(max-width:760px){.path-layout{grid-template-columns:1fr;gap:36px}.path{padding:76px 0;background:radial-gradient(ellipse at 80% 80%,#edc69a 0,transparent 62%),#f6eee1}.path h2{font-size:clamp(34px,6vw,45px)}.path-symbol{max-width:280px;width:100%;justify-self:center}.symbol-caption{font-size:18px;margin-top:0}.step-sign{margin-bottom:18px}}
