@@ -18,10 +18,10 @@ As cinco ilustrações ornamentais do processo estão em `assets/illustrations/s
 
 ## Entradas de clientes
 
-- `/axiomatekton/clientes/`: área de clientes dos serviços Axioma Tekton, com indicação explícita de que o registo, inquéritos, pedidos de orçamento e Pocket Cliente estão em preparação.
+- `/axiomatekton/clientes/`: questionário guiado de cinco passos para Real Estate, Architecture, Build e Teams, com resumo editável/exportável e explicação do futuro Pocket por contexto. A receção de pedidos no Dossier e a notificação por email continuam em preparação; a configuração de envio está desativada. Método, catálogo e contrato de integração em `axiomatekton/clientes/README.md`.
 - `/dossier/`: entrada visual própria para empresas utilizadoras do software Dossier, fora da secção Axioma Tekton e com assets próprios. Registo e autenticação ainda não estão disponíveis.
 
-As páginas atuais são informativas: não recolhem dados nem simulam contas, pedidos, login ou downloads. A separação por caminho não estabelece um domínio SaaS definitivo nem isolamento de autenticação. A ligação aos percursos operacionais será feita quando existirem destinos validados.
+O questionário prepara as respostas em memória no navegador e permite guardar voluntariamente um resumo local. Não as transmite nem as guarda no Dossier enquanto não existir receção pública validada. Registo, login e download da app permanecem futuros. A separação por caminho não estabelece um domínio SaaS definitivo nem isolamento de autenticação. A ligação aos percursos operacionais exige destinos e estados verificados.
 
 ## Pré-visualização
 

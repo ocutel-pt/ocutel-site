@@ -1,7 +1,59 @@
 <!doctype html>
-<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Área de cliente — Axioma Tekton</title><meta name="description" content="O futuro espaço dos clientes Axioma Tekton: pedidos, propostas e acompanhamento dos serviços."><link rel="stylesheet" href="/axiomatekton/editorial.css?v=20261013-3"></head>
-<body class="entry-body"><a class="skip" href="#conteudo">Saltar para o conteúdo</a><header class="header entry-header wrap"><a class="brand" href="/axiomatekton/" aria-label="Axioma Tekton — início"><img src="/axiomatekton/brand/logo.svg" width="264" height="104" alt="Axioma Tekton — Architecture + Build"></a><nav aria-label="Navegação da área de cliente"><a href="/axiomatekton/">Voltar ao site</a><a href="/dossier/">Procura o software Dossier? <span aria-hidden="true">↗</span></a></nav></header>
-<main id="conteudo" class="wrap"><section class="client-intro"><p class="eyebrow">Área de cliente · Axioma Tekton</p><h1>O seu projeto<br>começa aqui.</h1><p>Um espaço para dar a conhecer o que procura e acompanhar a sua relação com a Axioma Tekton, desde o primeiro pedido.</p></section>
-<div class="client-layout"><section aria-labelledby="services-title"><h2 id="services-title">O que pretende realizar?</h2><p>O percurso será ajustado ao serviço que procura e às necessidades do seu pedido.</p><ul class="client-services" role="list"><li><strong>Real Estate</strong><span>Informações sobre património e oportunidades imobiliárias.</span></li><li><strong>Architecture</strong><span>Levantamento, conceção e desenvolvimento do projeto.</span></li><li><strong>Build</strong><span>Construção, reabilitação, renovação e remodelação.</span></li><li><strong>Teams</strong><span>Competências e recursos para a execução.</span></li></ul><a class="text-link" href="/axiomatekton/#visao">Explorar os serviços <span aria-hidden="true">↗</span></a></section>
-<aside class="client-future" aria-labelledby="registration-title"><span class="availability">Em preparação</span><h2 id="registration-title">Registo e pedidos online</h2><p>Estamos a preparar o registo de clientes, os inquéritos e os pedidos de orçamento. Estas funcionalidades ainda não estão disponíveis nesta página.</p><p>Quando estiverem disponíveis, poderá iniciar e acompanhar os seus pedidos num espaço próprio.</p><div class="client-pocket"><h3>Pocket Cliente</h3><p>A continuidade da sua experiência: pedidos, informação e documentos partilhados, ajustados ao serviço em curso. O acesso e a instalação serão disponibilizados numa fase posterior.</p></div></aside></div></main>
-<footer class="client-footer wrap"><span>Axioma Tekton · Área de cliente</span><a href="/dossier/">Empresas utilizadoras do software: Portal Dossier <span aria-hidden="true">↗</span></a></footer></body></html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Área de cliente — Axioma Tekton</title>
+  <meta name="description" content="Conheça os serviços, prepare o seu pedido e descubra a futura experiência Pocket Cliente da Axioma Tekton.">
+  <link rel="stylesheet" href="/axiomatekton/editorial.css?v=20261014-4">
+  <link rel="stylesheet" href="/axiomatekton/clientes/clientes.css?v=20261014-1">
+  <script src="/axiomatekton/clientes/intake-config.js?v=20261014-1" defer></script>
+  <script src="/axiomatekton/clientes/questionario.js?v=20261014-1" defer></script>
+</head>
+<body class="entry-body">
+  <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="header entry-header wrap">
+    <a class="brand" href="/axiomatekton/" aria-label="Axioma Tekton — início"><img src="/axiomatekton/brand/logo.svg" width="264" height="104" alt="Axioma Tekton — Architecture + Build"></a>
+    <nav aria-label="Navegação da área de cliente"><a href="#pedido">Preparar um pedido</a><a href="#pocket">Pocket Cliente</a><a href="/axiomatekton/">Voltar ao site</a></nav>
+  </header>
+  <main id="conteudo">
+    <section class="client-intro wrap intake-intro" aria-labelledby="client-title">
+      <div><p class="eyebrow">Área de cliente · Axioma Tekton</p><h1 id="client-title">O primeiro passo<br>é perceber o que precisa.</h1><p>Escolha uma área. Conheça as possibilidades.<br>Prepare um pedido à medida da sua intenção.</p></div>
+      <div class="intro-margin"><span class="small-mark" aria-hidden="true"></span><p>Pode começar com uma ideia.<br>Os detalhes encontram-se pelo caminho.</p></div>
+    </section>
+    <section class="intake wrap" id="pedido" aria-label="Questionário de primeiro contacto">
+      <aside class="intake-margin" aria-label="Percurso do pedido">
+        <p class="eyebrow">Um pedido, passo a passo</p>
+        <ol class="intake-steps"><li aria-current="step"><span>01</span>Área</li><li><span>02</span>Necessidade</li><li><span>03</span>Contexto</li><li><span>04</span>Contacto</li><li><span>05</span>Rever e enviar</li></ol>
+        <div class="selected-area" hidden><img width="480" height="480" alt="" aria-hidden="true"><p class="selected-area-name"></p><p class="selected-area-note"></p></div>
+        <p class="intake-margin-note">Um primeiro contacto ajuda-nos a compreender o pedido. O âmbito, a disponibilidade e as condições são confirmados numa fase posterior.</p>
+      </aside>
+      <div class="intake-main">
+        <noscript><div class="intake-unavailable"><h2>Este questionário precisa de JavaScript.</h2><p>Ative JavaScript no navegador para selecionar a área e preparar o seu pedido. Pode continuar a <a href="/axiomatekton/#visao">conhecer os serviços</a>.</p></div></noscript>
+        <div id="questionnaire" hidden>
+          <button class="intake-back" type="button" hidden>← Voltar</button>
+          <p class="step-position" aria-live="polite"></p>
+          <div class="intake-errors" role="alert" tabindex="-1" hidden><h2>Verifique estes campos</h2><ul></ul></div>
+          <form id="request-form" novalidate>
+            <div id="step-content"></div>
+            <div class="intake-actions"><button class="button continue-button" type="submit">Continuar <span aria-hidden="true">→</span></button><span class="step-footnote">As respostas mantêm-se enquanto esta página estiver aberta.</span></div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="software-route wrap" aria-labelledby="software-title"><div><p class="eyebrow">Uma experiência própria</p><h2 id="software-title">Procura o software Dossier<br>para a sua empresa?</h2><p>O Portal Dossier é a entrada para empresas que pretendem gerir a sua atividade com o software.</p></div><a class="text-link" href="/dossier/">Conhecer o Portal Dossier <span aria-hidden="true">↗</span></a></section>
+    <section class="pocket-band" id="pocket" aria-labelledby="pocket-title"><div class="wrap pocket-content">
+      <div class="pocket-heading"><div><p class="eyebrow">Pocket Cliente · Futuro acesso</p><h2 id="pocket-title">O seu pedido.<br>Com continuidade.</h2></div><div><p>Este será também o local onde poderá descarregar a app Pocket Cliente, quando estiver disponível.</p><p>A experiência dependerá da sua relação com a Axioma Tekton, do pedido em curso e dos elementos que lhe forem expressamente partilhados.</p><span class="pocket-status">App e acesso de clientes em preparação</span></div></div>
+      <div class="pocket-personas">
+        <article><span class="pocket-number">01 / Real Estate</span><h3>Quem acompanha<br>uma operação.</h3><p>Informação e documentos partilhados sobre o património e a operação em que participa.</p></article>
+        <article><span class="pocket-number">02 / Architecture</span><h3>Quem dá forma<br>a um projeto.</h3><p>Peças e documentos partilhados, fases do trabalho e decisões que pedem o seu acompanhamento.</p></article>
+        <article><span class="pocket-number">03 / Build</span><h3>Quem acompanha<br>uma intervenção.</h3><p>Âmbito, propostas, alterações e informação de entrega que lhe sejam disponibilizados.</p></article>
+        <article><span class="pocket-number">04 / Teams</span><h3>Quem articula<br>os trabalhos.</h3><p>Âmbito acordado e documentação partilhada sobre os trabalhos contratados.</p></article>
+      </div>
+      <p class="pocket-boundary">O Pocket reúne o que é relevante para a sua experiência. O envio de um pedido não cria uma conta nem dá acesso automático a projetos ou documentos.</p>
+    </div></section>
+  </main>
+  <footer class="client-footer wrap"><span>Axioma Tekton · Área de cliente</span><a href="/dossier/">Empresas utilizadoras do software: Portal Dossier <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>
