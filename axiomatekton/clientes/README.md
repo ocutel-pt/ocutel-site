@@ -73,7 +73,7 @@ Persistir pedido e notificação pendente de forma atómica. O pedido fica em tr
 {
   "status": "received",
   "receipt": {
-    "id": "referencia_opaca_minimo_12_caracteres",
+    "id": "r_4ef10355f0e0424b9d841c88a29a8e70",
     "receivedAt": "2026-10-14T12:00:00.000Z"
   },
   "emailStatus": "pending"
@@ -93,6 +93,8 @@ Antes de ativação, fechar respostas tipadas de validação (`422`, campos perm
 - Endereço candidato `pedidos.axioma@ocutel.pt`: existência, provisionamento, destinatário de encaminhamento, controlo, fornecedor e entrega ainda não confirmados. Não há caixa criada por este trabalho.
 - Serviço de email/identidade remetente/segredos e infraestrutura sem autorização inferida. Testes reais de envio e gravação exigem destino seguro e mandato próprios.
 - Nenhum registo/login/Pocket, projeto, tenant, subscrição ou contrato criado por submissão.
+
+A referência deve ser imprevisível, com entropia criptográfica especificada no contrato final; o limite de comprimento do frontend não prova essa propriedade. Fechar também o prazo e o âmbito de validade da idempotência e a reconciliação sem consulta pública dos dados por referência. A outbox requer controlo de concorrência/replay; não prometer entrega de email exatamente uma vez sem garantia do fornecedor. Erros definitivos de validação/conflito/limite precisam de recuperação própria, distinta de timeout/5xx incertos, para não bloquear indefinidamente a edição. Estes pontos foram identificados na revisão de coordenação e impedem ativar o adapter candidato.
 
 Provas necessárias para ativação: dois pedidos isolados; persistência confirmada; erro BD sem falso sucesso; notificação pendente preservada; entrega/retry sem duplicação; timeout com repetição e mesmo recibo; divergência chave/hash; validação/catálogo adulterado; limite/abuso; acesso anónimo a dados e tenant cruzado recusados; campos e estado final refletidos na interface; responsável e destino de email aprovados.
 
