@@ -251,13 +251,18 @@
     event.preventDefault(); document.getElementById(link.getAttribute('href').slice(1))?.focus();
   });
   window.addEventListener('popstate', event => {
+    if (!Number.isInteger(event.state?.axiomaStep)) {
+      history.replaceState({axiomaStep:step}, '', location.href);
+      return;
+    }
     if (locked || complete) {history.replaceState({axiomaStep:step}, '', '#pedido/passo-5'); return;}
     save();
     const requested = event.state?.axiomaStep;
     const allowed = Number.isInteger(requested) && requested >= 0 && requested <= 4;
     let limit = !state.area ? 0 : (!state.interests.length || !state.goal) ? 1 : (!state.name || !state.email) ? 3 : 4;
-    step = allowed ? Math.min(requested, limit) : 0; render(true);
+    step = allowed ? Math.min(requested, limit) : 0; render(/^#pedido\/passo-/.test(location.hash));
   });
+  history.replaceState({axiomaStep:0}, '', location.href);
   document.getElementById('questionnaire').hidden = false;
   render();
 })();
