@@ -10,18 +10,27 @@ Site público: [ocutel.pt](https://ocutel.pt/).
 - `assets/illustrations/`: novo estudo visual da cnvt#0, versões optimizadas e registo do prompt.
 - `assets/fonts/`: fontes locais Inter e Ocutel Serif (derivada de Lora), com as respetivas licenças OFL. As versões para web incluem os caracteres latinos usados no site.
 - `brand/2026-10-13/`: entrega final da identidade visual; os originais estão preservados sem alterações.
-- `axiomatekton/`: página independente do projeto Axioma Tekton Group. Usa `editorial.css`, com tons minerais suaves e onze gravuras editoriais (cinco áreas, quatro passos do método e dois conceitos) em `symbols/`, separadas da identidade oficial.
 
 A identidade visual utiliza a entrega oficial: lettering, galo com rosácea, rosácea e logótipo completo. A navalha cnvt#0 é apresentada numa nova ilustração de conceito, inspirada no desenho anterior e identificada como estudo em desenvolvimento. A prancha pode ser ampliada e descarregada. O histórico Git conserva as imagens anteriores.
 
 As cinco ilustrações ornamentais do processo estão em `assets/illustrations/symbols/`, com o registo dos prompts. São elementos editoriais separados da identidade oficial. Os logótipos e a rosácea usam os originais da agência, sem sobreposições nem alterações de cor ou opacidade.
 
-## Entradas de clientes
+## Projetos empresariais do autor
 
-- `/axiomatekton/clientes/`: questionário guiado de cinco passos para Real Estate, Architecture, Build e Teams, com resumo editável/exportável e explicação do futuro Pocket por contexto. A receção de pedidos no Dossier e a notificação por email continuam em preparação; a configuração de envio está desativada. Método, catálogo e contrato de integração em `axiomatekton/clientes/README.md`.
-- `/dossier/`: entrada visual própria para empresas utilizadoras do software Dossier, fora da secção Axioma Tekton e com assets próprios. Registo e autenticação ainda não estão disponíveis.
+A ligação no rodapé aponta para o site independente da Axioma Tekton:
+[www.axiomatekton.pt](https://www.axiomatekton.pt/). A expressão «Projetos do grupo»
+foi substituída por «Projetos empresariais do autor».
 
-O questionário prepara as respostas em memória no navegador e permite guardar voluntariamente um resumo local. Não as transmite nem as guarda no Dossier enquanto não existir receção pública validada. Registo, login e download da app permanecem futuros. A separação por caminho não estabelece um domínio SaaS definitivo nem isolamento de autenticação. A ligação aos percursos operacionais exige destinos e estados verificados.
+Os conteúdos antigos da Axioma Tekton e a apresentação provisória Dossier foram
+retirados deste site. As URLs `/axiomatekton/`, `/axiomatekton/clientes/` e `/dossier/`
+conservam apenas páginas mínimas de redirecionamento para o site Axioma (e para
+`/clientes/` no caso do questionário). Não oferecem login nem recolhem dados.
+O histórico Git preserva os ficheiros removidos. O site Axioma tem repositório próprio
+em `axioma-tekton/site`; o site Ocutel mantém o seu repositório e publicação.
+
+GitHub Pages serve os redirecionamentos como HTML com meta refresh, canonical e
+ligação acessível; não são respostas HTTP 301. Ligações antigas a assets removidos
+podem devolver 404. Não foram alterados DNS, email ou o site Axioma.
 
 ## Pré-visualização
 
